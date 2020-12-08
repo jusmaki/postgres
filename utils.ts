@@ -89,7 +89,7 @@ export function parseDsn(dsn: string): DsnResult {
 }
 
 export function delay<T extends object>(ms: number, value?: T): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
+  return new Promise<T extends object>((resolve, reject) => {
     setTimeout(() => {
       resolve(value);
     }, ms);
