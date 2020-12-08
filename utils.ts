@@ -88,7 +88,7 @@ export function parseDsn(dsn: string): DsnResult {
   };
 }
 
-export function delay<T>(ms: number, value?: T): Promise<T> {
+export function delay<T extends object>(ms: number, value?: T): Promise<T> {
   return new Promise<T>((resolve, reject) => {
     setTimeout(() => {
       resolve(value);
